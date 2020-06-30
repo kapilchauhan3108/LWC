@@ -1,4 +1,10 @@
 <template>
-    
-    <div>Div in child COmponent</div>
+
+   <div onclick= {tileClicked}>
+        <lightning-tile
+            label= {meetingRoomInfo.roomNumber}
+            href="">
+            <p class="slds-truncate" title= {meetingRoomInfo.roomCapacity} >Room Capacity  : {meetingRoomInfo.roomCapacity}</p>
+        </lightning-tile>
+    </div>
 </template>

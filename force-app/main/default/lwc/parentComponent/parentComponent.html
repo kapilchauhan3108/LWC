@@ -1,18 +1,28 @@
 <template>
-    <lightning-card>
-    <p>Parent Component</p>
 
-     <div>div in Parent Componnet </div>  
-    <c-child-component2></c-child-component2>
-
-
-
+    <lightning-card label  = "Parent Component">
+    <!--   
     <lightning-button label= "click It!" onclick = "{checkboxClickParent}"></lightning-button>
+    <c-child-component2></c-child-component2>
+   --> 
 
-    
-    
+    <lightning-card>
+       <ul>
+          <template for:each = {meetingRoomInfo} for:item = "item">
+             <li key = {item.roomNumber}>
+             <!-- Case will be converted from Camel Case to Cabab case.. --> 
+             <c-child-component2 meeting-room-info = {item}>
+             </c-child-Component2>                
+             </li>        
+           </template>
+       </ul> 
+     </lightning-card>
 
+     <lightning-card>
+     Selected Meeting room is  : {meetingRoomSelected}
     </lightning-card>
-     
+   </lightning-card> 
 
 </template>
+
+
